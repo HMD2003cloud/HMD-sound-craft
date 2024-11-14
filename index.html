@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> HMD Sound Craft Studios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(17, 24, 39, 0.8);
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #1e2837, #111827);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .glow {
+            position: relative;
+        }
+
+        .glow::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--primary-gradient);
+            z-index: -1;
+            border-radius: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .glow:hover::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full glass-effect z-50 border-b border-gray-700/30">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text"> HMD Sound Craft</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all">Home</a>
+                    <a href="#services" class="hover:text-blue-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all">Services</a>
+                    <a href="#studio" class="hover:text-blue-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all">Studio</a>
+                    <a href="#courses" class="hover:text-blue-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all">Courses</a>
+                    <a href="#contact" class="hover:text-blue-400 transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-400 hover:after:w-full after:transition-all">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl hover:text-blue-400 transition-colors">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-purple-500/10 to-transparent"></div>
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <div class="text-center">
+                <h1 class="text-6xl md:text-8xl font-bold mb-8 gradient-text tracking-tight">
+                    Craft Your Sound
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Professional audio engineering and music production services to bring your sonic vision to life.
+                </p>
+                <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full text-lg hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-blue-500/25">
+                    Book Session
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="hover-card p-8 rounded-xl">
+                    <div class="text-blue-400 text-4xl mb-6">🎙️</div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Recording</h3>
+                    <p class="text-gray-400 leading-relaxed">Professional recording services with industry-standard equipment and acoustic treatment.</p>
+                </div>
+                <div class="hover-card p-8 rounded-xl">
+                    <div class="text-blue-400 text-4xl mb-6">🎚️</div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Mixing</h3>
+                    <p class="text-gray-400 leading-relaxed">Expert mixing services to achieve clarity, balance, and professional sound quality.</p>
+                </div>
+                <div class="hover-card p-8 rounded-xl">
+                    <div class="text-blue-400 text-4xl mb-6">💿</div>
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">Mastering</h3>
+                    <p class="text-gray-400 leading-relaxed">Final polish to ensure your music sounds great on all platforms and devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Section -->
+    <section id="studio" class="py-20 relative bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text">Studio Equipment</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="hover-card p-8 rounded-xl glow">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Recording Chain</h3>
+                        <ul class="text-gray-400 space-y-3">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Pro Tools HD System</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Neve Preamps</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Neumann Microphones</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="hover-card p-8 rounded-xl glow">
+                        <h3 class="text-2xl font-bold mb-6 gradient-text">Monitoring</h3>
+                        <ul class="text-gray-400 space-y-3">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Genelec Monitors</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Sonarworks Calibration</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>Multiple Reference Systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text">Our Courses</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="hover-card rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Audio Engineering Basics</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Learn the fundamentals of audio engineering and recording.</p>
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full text-sm hover:scale-105 transition-transform duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="hover-card rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Advanced Mixing</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Master the art of mixing with professional techniques.</p>
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full text-sm hover:scale-105 transition-transform duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                <div class="hover-card rounded-xl overflow-hidden">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Music Production</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">Complete guide to modern music production workflows.</p>
+                        <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-full text-sm hover:scale-105 transition-transform duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center gradient-text">Get In Touch</h2>
+            <div class="max-w-xl mx-auto">
+                <form class="space-y-6">
+                    <div class="hover-card p-8 rounded-xl">
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Name</label>
+                        <input type="text" class="w-full px-4 py-3 bg-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                    </div>
+                    <div class="hover-card p-8 rounded-xl">
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Email</label>
+                        <input type="email" class="w-full px-4 py-3 bg-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                    </div>
+                    <div class="hover-card p-8 rounded-xl">
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-3 bg-gray-900 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"></textarea>
+                    </div>
+                    <button class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-blue-500/25">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center text-gray-400">
+                <p>© 2024 SoundCraft Studios. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // GSAP Animations
+        gsap.from('.gradient-text', {
+            duration: 1,
+            y: 100,
+            opacity: 0,
+            stagger: 0.2,
+            ease: 'power3.out'
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isInters
